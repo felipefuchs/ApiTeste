@@ -1,0 +1,13 @@
+C:\Fuchs-App\Projetos\ApiTeste\SellApiBusiness\obj\Debug\net9.0\SellApiBusiness.csproj.AssemblyReference.cache
+C:\Fuchs-App\Projetos\ApiTeste\SellApiBusiness\obj\Debug\net9.0\SellApiBusiness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Fuchs-App\Projetos\ApiTeste\SellApiBusiness\obj\Debug\net9.0\SellApiBusiness.AssemblyInfoInputs.cache
+C:\Fuchs-App\Projetos\ApiTeste\SellApiBusiness\obj\Debug\net9.0\SellApiBusiness.AssemblyInfo.cs
+C:\Fuchs-App\Projetos\ApiTeste\SellApiBusiness\obj\Debug\net9.0\SellApiBusiness.csproj.CoreCompileInputs.cache
+C:\Fuchs-App\Projetos\ApiTeste\SellApiBusiness\obj\Debug\net9.0\SellApiBusiness.sourcelink.json
+C:\Fuchs-App\Projetos\ApiTeste\SellApiBusiness\bin\Debug\net9.0\SellApiBusiness.deps.json
+C:\Fuchs-App\Projetos\ApiTeste\SellApiBusiness\bin\Debug\net9.0\SellApiBusiness.dll
+C:\Fuchs-App\Projetos\ApiTeste\SellApiBusiness\bin\Debug\net9.0\SellApiBusiness.pdb
+C:\Fuchs-App\Projetos\ApiTeste\SellApiBusiness\obj\Debug\net9.0\SellApiBusiness.dll
+C:\Fuchs-App\Projetos\ApiTeste\SellApiBusiness\obj\Debug\net9.0\refint\SellApiBusiness.dll
+C:\Fuchs-App\Projetos\ApiTeste\SellApiBusiness\obj\Debug\net9.0\SellApiBusiness.pdb
+C:\Fuchs-App\Projetos\ApiTeste\SellApiBusiness\obj\Debug\net9.0\ref\SellApiBusiness.dll

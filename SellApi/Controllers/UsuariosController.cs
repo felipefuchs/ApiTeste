@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SellApi.Models;
+using SellApiBusiness.Model;
+using System;
 
 namespace SellApi.Controllers
 {
@@ -11,21 +13,13 @@ namespace SellApi.Controllers
         private static readonly List<Usuario> _usuarios = new List<Usuario>();
         private static int _nextId = 1;
 
-        /// <summary>
-        /// GET api/usuarios
-        /// Recupera todos os usuários.
-        /// </summary>
+        [Authorize]
         [HttpGet]
         public ActionResult<IEnumerable<Usuario>> GetAll()
         {
             return Ok(_usuarios);
         }
 
-        /// <summary>
-        /// GET api/usuarios/{id}
-        /// Recupera usuário pelo id.
-        /// </summary>
-        /// <param name="id">Id do usuário</param>
         [HttpGet("{id:int}")]
         public ActionResult<Usuario> GetById(int id)
         {
@@ -40,53 +34,51 @@ namespace SellApi.Controllers
         /// Exemplo de payload:
         /// {
         ///   "nome": "João da Silva",
-        ///   "password": "senhaSegura123",
-        ///   "active": true
+        ///   "email": "joao@exemplo.com",
+        ///   "senha": "senhaSegura123",
+        ///   "ativo": true
         /// }
         /// </summary>
-        [HttpPost]
-        public ActionResult<Usuario> Create([FromBody] UsuarioCreateDto dto)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+        // [HttpPost]
+        // public ActionResult<Usuario> Create([FromBody] Usuario usuario     ) 
+        //  {
+        //     if (!ModelState.IsValid)
+        //         return BadRequest(ModelState);
 
-            var usuario = new Usuario
-            {
-                Id = _nextId++,
-                Nome = dto.Nome,
-                Password = dto.Password,
-                Active = dto.Active
-            };
+        //     var usuario = new Usuario
+        //     {
+        //         Id = _nextId++,
+        //         Nome = usuario.Nome,
+        //         Email = usuario.Email,
+        //         Senha = usuario.Senha,
+        //         Ativo = usuario.Ativo,
+        //         DataCriacao = DateTime.UtcNow
+        //     };
 
-            _usuarios.Add(usuario);
+        //     _usuarios.Add(usuario);
 
-            return CreatedAtAction(nameof(GetById), new { id = usuario.Id }, usuario);
-        }
+        //     return CreatedAtAction(nameof(GetById), new { id = usuario.Id }, usuario);
+        // }
 
-        /// <summary>
-        /// PUT api/usuarios/{id}
-        /// Atualiza usuário existente.
-        /// Exemplo de payload:
-        /// {
-        ///   "nome": "Nome atualizado",
-        ///   "password": "novaSenha123",
-        ///   "active": false
-        /// }
-        /// </summary>
-        [HttpPut("{id:int}")]
-        public ActionResult Update(int id, [FromBody] UsuarioUpdateDto dto)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+        // /// <summary>
+        // /// PUT api/usuarios/{id}
+        // /// Atualiza usuário existente.
+        // /// </summary>
+        // [HttpPut("{id:int}")]
+        // public ActionResult Update(int id, [FromBody] Usuario dto)
+        // {
+        //     if (!ModelState.IsValid)
+        //         return BadRequest(ModelState);
 
-            var usuario = _usuarios.FirstOrDefault(u => u.Id == id);
-            if (usuario == null) return NotFound();
+        //     var usuario = _usuarios.FirstOrDefault(u => u.Id == id);
+        //     if (usuario == null) return NotFound();
 
-            usuario.Nome = dto.Nome;
-            usuario.Password = dto.Password;
-            usuario.Active = dto.Active;
+        //     usuario.Nome = dto.Nome;
+        //     usuario.Email = dto.Email;
+        //     usuario.Senha = dto.Senha;
+        //     usuario.Ativo = dto.Ativo;
 
-            return NoContent();
-        }
+        //     return NoContent();
+        // }
     }
 }
